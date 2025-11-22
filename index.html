@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Launching Soon - Luxury Footwear</title>
+    <title>Launching Soon - MOVIDA</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -17,6 +17,9 @@
             background: #fafafa;
             color: #2d2d2d;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         ::-webkit-scrollbar {
@@ -130,7 +133,7 @@
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -156,7 +159,7 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: #cc0000;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.8rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.2s forwards;
             font-weight: 500;
@@ -164,10 +167,10 @@
 
         .hero h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 6.5rem;
+            font-size: 5.5rem;
             font-weight: 400;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.4s forwards;
             letter-spacing: -3px;
@@ -184,10 +187,10 @@
         }
 
         .hero-description {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 300;
             color: #666;
-            margin-bottom: 3.5rem;
+            margin-bottom: 2rem;
             letter-spacing: 0.5px;
             opacity: 0;
             animation: fadeInUp 0.8s ease 0.6s forwards;
@@ -274,65 +277,10 @@
             }
         }
 
-        /* Scroll Indicator */
-        .scroll-down {
-            position: absolute;
-            bottom: 3rem;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            animation: fadeIn 0.8s ease 1s forwards, floatUpDown 2s ease-in-out 1.8s infinite;
-            z-index: 1;
-        }
-
-        .scroll-down span {
-            display: block;
-            width: 20px;
-            height: 30px;
-            border: 2px solid #cc0000;
-            border-radius: 15px;
-            position: relative;
-            margin: 0 auto 10px;
-        }
-
-        .scroll-down span::before {
-            content: '';
-            position: absolute;
-            top: 6px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 6px;
-            background: #cc0000;
-            border-radius: 2px;
-            animation: scrollWheel 2s ease-in-out infinite;
-        }
-
-        @keyframes scrollWheel {
-            0% { top: 6px; opacity: 1; }
-            100% { top: 16px; opacity: 0; }
-        }
-
-        @keyframes floatUpDown {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-10px); }
-        }
-
-        .scroll-down p {
-            font-size: 0.65rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #999;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Section Styles */
-        section {
-            padding: 8rem 6%;
+        /* Collection Section */
+        .collection {
+            padding: 5rem 6%;
+            background: white;
             position: relative;
             z-index: 1;
         }
@@ -340,7 +288,7 @@
         .section-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 5rem;
+            margin: 0 auto 3.5rem;
         }
 
         .section-label {
@@ -368,119 +316,10 @@
             font-weight: 300;
         }
 
-        /* About Section */
-        .about {
-            background: white;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        .about-image {
-            aspect-ratio: 4/5;
-            background: linear-gradient(135deg, rgba(204, 0, 0, 0.1), rgba(255, 107, 157, 0.1));
-            border-radius: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 6rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(204, 0, 0, 0.08);
-        }
-
-        .about-image::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
-            animation: shimmer 8s linear infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .about-content h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #1a1a1a;
-            font-weight: 400;
-        }
-
-        .about-content p {
-            font-size: 1.05rem;
-            line-height: 1.9;
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-        }
-
-        .features-list {
-            margin-top: 3rem;
-        }
-
-        .feature-row {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: rgba(204, 0, 0, 0.02);
-            border-radius: 16px;
-            transition: all 0.4s ease;
-        }
-
-        .feature-row:hover {
-            background: rgba(204, 0, 0, 0.05);
-            transform: translateX(10px);
-        }
-
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #cc0000, #ff6b9d);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .feature-text h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            margin-bottom: 0.3rem;
-            color: #1a1a1a;
-        }
-
-        .feature-text p {
-            font-size: 0.9rem;
-            color: #888;
-            margin: 0;
-        }
-
-        /* Collection Section */
-        .collection {
-            background: linear-gradient(to bottom, #ffffff, #fef5f7);
-        }
-
         .collection-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -523,31 +362,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 5rem;
             position: relative;
             overflow: hidden;
         }
 
-        .collection-image::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
+        .collection-image img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, rgba(255, 255, 255, 0.9), transparent);
-            transform: translateY(100%);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            object-fit: cover;
         }
 
-        .collection-card:hover .collection-image::after {
-            transform: translateY(0);
+        .collection-image .placeholder {
+            font-size: 5rem;
         }
 
         .collection-info {
             padding: 2rem;
             position: relative;
             z-index: 2;
+            text-align: center;
         }
 
         .collection-info h3 {
@@ -568,112 +401,13 @@
             line-height: 1.6;
         }
 
-        /* Notify Section */
-        .notify {
-            background: white;
-            text-align: center;
-        }
-
-        .notify-box {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 4rem;
-            background: linear-gradient(135deg, rgba(204, 0, 0, 0.03), rgba(255, 193, 217, 0.03));
-            border-radius: 32px;
-            border: 1px solid rgba(204, 0, 0, 0.1);
-        }
-
-        .notify-form {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2.5rem;
-        }
-
-        .input-group {
-            flex: 1;
-            position: relative;
-        }
-
-        input[type="email"] {
-            width: 100%;
-            padding: 1.3rem 1.8rem;
-            background: white;
-            border: 2px solid rgba(204, 0, 0, 0.15);
-            color: #2d2d2d;
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s ease;
-            font-family: 'Montserrat', sans-serif;
-            border-radius: 50px;
-        }
-
-        input[type="email"]:focus {
-            border-color: #cc0000;
-            box-shadow: 0 0 0 4px rgba(204, 0, 0, 0.08);
-        }
-
-        input[type="email"]::placeholder {
-            color: #aaa;
-        }
-
-        .submit-btn {
-            padding: 1.3rem 3.5rem;
-            background: linear-gradient(135deg, #cc0000, #ff4d4d);
-            border: none;
-            color: white;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            font-family: 'Montserrat', sans-serif;
-            border-radius: 50px;
-            box-shadow: 0 8px 24px rgba(204, 0, 0, 0.25);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .submit-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .submit-btn:hover::before {
-            left: 100%;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(204, 0, 0, 0.35);
-        }
-
-        #formMessage {
-            color: #cc0000;
-            font-size: 0.95rem;
-            margin-top: 1.5rem;
-            font-weight: 500;
-        }
-
         /* Footer */
         footer {
             background: #fafafa;
-            padding: 4rem 6%;
+            padding: 3rem 6%;
             border-top: 1px solid rgba(204, 0, 0, 0.08);
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
+            z-index: 1;
         }
 
         .footer-logo {
@@ -688,67 +422,7 @@
             text-transform: uppercase;
         }
 
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border-radius: 50%;
-            color: #cc0000;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-        }
-
-        .social-links a:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 8px 24px rgba(204, 0, 0, 0.2);
-            background: linear-gradient(135deg, #cc0000, #ff6b9d);
-            color: white;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(204, 0, 0, 0.08);
-            color: #999;
-            font-size: 0.85rem;
-        }
-
-        /* Fade-in Observer */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .fade-in-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* Responsive */
-        @media (max-width: 1200px) {
-            .hero h1 {
-                font-size: 5rem;
-            }
-
-            .about-grid,
-            .collection-grid {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-            }
-        }
-
         @media (max-width: 768px) {
             nav {
                 padding: 1.5rem 5%;
@@ -766,25 +440,8 @@
                 flex-direction: column;
             }
 
-            section {
-                padding: 5rem 5%;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .notify-form {
-                flex-direction: column;
-            }
-
-            .notify-box {
-                padding: 2.5rem 2rem;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                gap: 2rem;
+            footer {
+                padding: 2rem 5%;
             }
         }
     </style>
@@ -800,162 +457,33 @@
         <div class="logo">MOVIDA</div>
     </nav>
 
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
             <div class="hero-badge">Launching Soon</div>
             <h1>Bold Steps,<br><span class="accent">Boundless Comfort</span></h1>
             <p class="hero-description">Discover footwear designed for the modern woman—<br>where elegance meets uncompromising comfort</p>
             
             <div class="cta-group">
-                <a href="#notify" class="btn-primary">Get Early Access</a>
-                <a href="#collection" class="btn-secondary">View Collection</a>
+                <a href="#" class="btn-primary">Get Early Access</a>
+                <a href="#" class="btn-secondary">View Collection</a>
             </div>
-        </div>
-        
-        <div class="scroll-down">
-            <span></span>
-            <p>Scroll</p>
-        </div>
-    </section>
-
-    <section class="about fade-in-section" id="about">
-        <div class="section-header">
-            <div class="section-label">Our Story</div>
-            <h2 class="section-title">Redefining Elegance</h2>
-            <p class="section-description">Every step you take deserves to be comfortable, confident, and undeniably stylish</p>
-        </div>
-        
-        <div class="about-grid">
-            <div class="about-image">
-                <span>17.HEIC</span>
-            </div>
-            
-            <div class="about-content">
-                <h3>Comfort Redefined</h3>
-                <p>We believe that luxury shouldn't come at the cost of comfort. Every design is meticulously crafted to provide unparalleled support while making a statement.</p>
-                <p>Our collection embodies sophistication, confidence, and timeless elegance—footwear that moves with you through every moment of your day.</p>
-                
-                <div class="features-list">
-                    <div class="feature-row">
-                        <div class="feature-icon">✨</div>
-                        <div class="feature-text">
-                            <h4>Premium Materials</h4>
-                            <p>Sourced from the finest artisans, ensuring durability and comfort</p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-row">
-                        <div class="feature-icon">💎</div>
-                        <div class="feature-text">
-                            <h4>Bold Aesthetics</h4>
-                            <p>Designs that make a statement while remaining timelessly elegant</p>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-row">
-                        <div class="feature-icon">🌟</div>
-                        <div class="feature-text">
-                            <h4>All-Day Comfort</h4>
-                            <p>Engineered for support from morning meetings to evening events</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="collection fade-in-section" id="collection">
-        <div class="section-header">
-            <div class="section-label">The Collection</div>
-            <h2 class="section-title">Signature Pieces</h2>
-            <p class="section-description">Each piece tells a story of elegance, comfort, and bold sophistication</p>
-        </div>
-        
-        <div class="collection-grid">
-            <div class="collection-card">
-                <div class="collection-image">
-                    <span>15.HEIC</span>
-                </div>
-                <div class="collection-info">
-                    <h3>Midnight Elegance</h3>
-                    <p>Bold silhouettes that transition seamlessly from day to night</p>
-                </div>
-            </div>
-            
-            <div class="collection-card">
-                <div class="collection-image">
-                    <span>C:\Users\sharm\Desktop\Movida Designs\13.HEIC</span>
-                </div>
-                <div class="collection-info">
-                    <h3>Summer Bliss</h3>
-                    <p>Light, airy designs perfect for warm weather sophistication</p>
-                </div>
-            </div>
-            
-            <div class="collection-card">
-                <div class="collection-image">
-                    <span>🩴</span>
-                </div>
-                <div class="collection-info">
-                    <h3>Comfort Luxe</h3>
-                    <p>Elevated casual wear that never compromises on style</p>
-                </div>
-            </div>
-
-            <div class="collection-card">
-                <div class="collection-image">
-                    <span>👠</span>
-                </div>
-                <div class="collection-info">
-                    <h3>Power Statement</h3>
-                    <p>Commanding presence with every confident stride</p>
-                </div>
-            </div>
-            
-            <div class="collection-card">
-                <div class="collection-image">
-                    <span>👡</span>
-                </div>
-                <div class="collection-info">
-                    <h3>Urban Chic</h3>
-                    <p>Contemporary designs for the modern metropolitan woman</p>
-                </div>
-            </div>
-            
-            <div class="collection-card">
-                <div class="collection-image">
-                    <span>👠</span>
-                </div>
-                <div class="collection-info">
-                    <h3>Timeless Grace</h3>
-                    <p>Classic elegance reimagined for today's discerning taste</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="notify fade-in-section" id="notify">
-        <div class="section-header">
-            <div class="section-label">Join the Waitlist</div>
-            <h2 class="section-title">Be the First</h2>
-            <p class="section-description">Get exclusive early access and be among the first to experience luxury redefined</p>
-        </div>
-        
-        <div class="notify-box">
-            <form id="emailForm">
-                <div class="notify-form">
-                    <div class="input-group">
-                        <input type="email" placeholder="Enter your email address" required id="emailInput">
-                    </div>
-                    <button type="submit" class="submit-btn">Notify Me</button>
-                </div>
-                <p id="formMessage"></p>
-            </form>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">BRAND NAME</div>
-            <div class="social-links">
-                <a href="#" title="Instagram
+        <div class="footer-logo">MOVIDA</div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
