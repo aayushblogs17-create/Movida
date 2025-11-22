@@ -140,6 +140,29 @@
         }
 
         /* Hero Section */
+        /* Replace entire .hero style block with this */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: url('webssite bg.jpg') center/cover no-repeat;
+            padding: 10rem 2rem 4rem;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(2px);
+            pointer-events: none;
+        }
+
         .hero {
             min-height: 90vh;
             display: flex;
@@ -636,6 +659,7 @@
     </script>
 </body>
 </html>
+
 
 
 
