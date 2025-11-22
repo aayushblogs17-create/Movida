@@ -147,9 +147,16 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            background: url('webbg.jpg') center/cover no-repeat;
+
+    /* Background image + gradient (image at the back, gradient on top) */
+            background-image: url('bg.jpg'), linear-gradient(180deg, #ffffff 0%, #fef5f7 50%, #ffffff 100%);
+            background-position: center, center;
+            background-size: cover, 100% 100%;
+            background-repeat: no-repeat, no-repeat;
+
             padding: 10rem 2rem 4rem;
         }
+
 
         .hero::after {
             content: "";
@@ -161,16 +168,6 @@
             background: rgba(255, 255, 255, 0.55);
             backdrop-filter: blur(2px);
             pointer-events: none;
-        }
-
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: linear-gradient(180deg, #ffffff 0%, #fef5f7 50%, #ffffff 100%);
-            padding: 10rem 2rem 4rem;
         }
 
         .hero-content {
@@ -659,6 +656,7 @@
     </script>
 </body>
 </html>
+
 
 
 
