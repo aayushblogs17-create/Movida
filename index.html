@@ -119,15 +119,14 @@
             font-size: 3.6rem;
             font-weight: 700;
             letter-spacing: 8px;
-            background: linear-gradient(135deg, #cc0000, #ff6b9d, #cc0000);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #cc0000;
             transition: all 0.4s ease;
             text-transform: uppercase;
-            animation: gradientShift 4s ease infinite;
-            position: relative;
+        }
+
+        .logo:hover {
+            letter-spacing: 10px;
+            transform: scale(1.05);
         }
 
         @keyframes gradientShift {
@@ -619,4 +618,5 @@
     </script>
 </body>
 </html>
+
 
